@@ -1,0 +1,141 @@
+# docker-compose.yml
+version: '3.8'
+
+services:
+  mysql_db:
+    image: mysql:8.0
+    container_name: microservices_mysql
+    restart: unless-stopped
+    environment:
+      MYSQL_DATABASE: microservices_example
+      MYSQL_ROOT_PASSWORD: rootpassword # Змініть на безпечний пароль
+      MYSQL_USER: appuser
+      MYSQL_PASSWORD: apppassword # Змініть на безпечний пароль
+    ports:
+      - "3306:3306"
+       # Мапте тільки якщо потрібен прямий доступ з хоста
+    volumes:
+      - mysql_data:/var/lib/mysql
+      - ./db_init/init.sql:/docker-entrypoint-initdb.d/init.sql # Для початкової ініціалізації таблиць
+    networks:
+      - app_network
+
+  rabbitmq:
+    image: rabbitmq:3.12-management-alpine # management для веб-інтерфейсу
+    container_name: microservices_rabbitmq
+    restart: unless-stopped
+    ports:
+      - "5672:5672"  # AMQP порт
+      - "15672:15672" # RabbitMQ Management UI (логін/пароль guest/guest)
+    environment:
+      RABBITMQ_DEFAULT_USER: guest # Використовуйте змінні середовища для продакшену
+      RABBITMQ_DEFAULT_PASS: guest
+    volumes:
+      - rabbitmq_data:/var/lib/rabbitmq/
+    networks:
+      - app_network
+    healthcheck: # <--- Це ключ
+      test: ["CMD", "rabbitmq-diagnostics", "-q", "ping"] # <--- test є підключем healthcheck
+      interval: 30s
+      timeout: 10s
+      retries: 5
+      start_period: 30s  
+
+  user_service_app:
+    build:
+      context: ./user_service
+      dockerfile: Dockerfile
+    container_name: user_service
+    restart: unless-stopped
+    depends_on:
+      - mysql_db
+      - rabbitmq
+    environment:
+      DB_HOST: mysql_db
+      DB_DATABASE: microservices_example
+      DB_USER: appuser # Використовуйте користувача, не root
+      DB_PASSWORD: apppassword
+      RABBITMQ_HOST: rabbitmq
+      RABBITMQ_PORT: 5672
+      RABBITMQ_USER: guest
+      RABBITMQ_PASS: guest
+      # PHP_IDE_CONFIG: "serverName=user_service_docker" # Для Xdebug, якщо налаштовуєте
+    volumes:
+      - ./user_service/src:/var/www/app/src # Для розробки, щоб бачити зміни коду без перебудови
+      - ./user_service/public:/var/www/app/public
+      - ./user_service/logs:/var/www/app/logs
+    networks:
+      - app_network
+    # ports: # Не мапимо порти, доступ через API Gateway
+    #   - "8001:80"
+
+  product_service_app:
+    build:
+      context: ./product_service
+      dockerfile: Dockerfile
+    container_name: product_service
+    restart: unless-stopped
+    depends_on:
+      - mysql_db
+    environment:
+      DB_HOST: mysql_db
+      DB_DATABASE: microservices_example
+      DB_USER: appuser
+      DB_PASSWORD: apppassword
+    volumes:
+      - ./product_service/src:/var/www/app/src
+      - ./product_service/public:/var/www/app/public
+      - ./product_service/logs:/var/www/app/logs
+    networks:
+      - app_network
+    # ports:
+    #   - "8002:80"
+
+  notification_service_app:
+    build:
+      context: ./notification_service
+      dockerfile: Dockerfile
+    container_name: notification_service
+    restart: unless-stopped
+    depends_on:
+      rabbitmq:
+        condition: service_healthy
+    environment:
+      RABBITMQ_HOST: rabbitmq
+      RABBITMQ_PORT: 5672
+      RABBITMQ_USER: guest
+      RABBITMQ_PASS: guest
+    volumes:
+      - ./notification_service/src:/app/src
+      - ./notification_service/logs:/app/logs
+    networks:
+      - app_network
+
+  api_gateway_app:
+    build:
+      context: ./api_gateway
+      dockerfile: Dockerfile
+    container_name: api_gateway
+    restart: unless-stopped
+    ports:
+      - "8000:80" # Головна точка входу до системи
+    depends_on:
+      - user_service_app
+      - product_service_app
+    environment:
+      USER_SERVICE_URL: http://user_service_app # Ім'я сервісу user_service_app, Apache там на порту 80
+      PRODUCT_SERVICE_URL: http://product_service_app
+    volumes:
+      - ./api_gateway/src:/var/www/app/src
+      - ./api_gateway/public:/var/www/app/public
+      - ./api_gateway/logs:/var/www/app/logs
+    networks:
+      - app_network
+
+volumes:
+  mysql_data:
+  rabbitmq_data:
+
+networks:
+  app_network:
+    driver: bridge

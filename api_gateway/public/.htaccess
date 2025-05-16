@@ -1,0 +1,11 @@
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+
+    # Якщо запит не є файлом або директорією, що фізично існує
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteCond %{REQUEST_FILENAME} !-d
+
+    # Перенаправити всі такі запити на index.php
+    # Запит (наприклад, /api/users) буде доступний в PHP через $_SERVER['REQUEST_URI']
+    RewriteRule ^ index.php [QSA,L]
+</IfModule>
