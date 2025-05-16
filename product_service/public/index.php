@@ -48,6 +48,7 @@ $options = [
     PDO::ATTR_ERRMODE            => PDO::ERRMODE_EXCEPTION,
     PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC,
     PDO::ATTR_EMULATE_PREPARES   => false,
+    PDO::MYSQL_ATTR_INIT_COMMAND => "SET NAMES 'utf8mb4' COLLATE 'utf8mb4_unicode_ci'",
 ];
 
 try {
@@ -60,7 +61,12 @@ try {
 }
 
 $method = $_SERVER['REQUEST_METHOD'];
-$pathInfo = $_SERVER['PATH_INFO'] ?? '/';
+//$pathInfo = $_SERVER['PATH_INFO'] ?? '/';
+
+$path = $_SERVER['REQUEST_URI'];
+if (false !== $pos = strpos($path, '?')) {
+    $path = substr($path, 0, $pos);
+}
 
 // Отримання ролі користувача з заголовка (встановлюється API Gateway)
 $userRole = $_SERVER['HTTP_X_USER_ROLE'] ?? 'guest';
@@ -68,7 +74,7 @@ $userRole = $_SERVER['HTTP_X_USER_ROLE'] ?? 'guest';
 
 $log->info("Request received", [
     'method' => $method,
-    'path' => $pathInfo,
+    'path' => $path,
     'role' => $userRole,
     // 'userId' => $userId
 ]);
@@ -76,15 +82,35 @@ $log->info("Request received", [
 
 try {
     // Проста маршрутизація
-    if ($pathInfo === '/products' && $method === 'GET') {
+    if ($path === '/products' && $method === 'GET') {
         // Отримати всі продукти (доступно для всіх)
         $stmt = $pdo->query("SELECT id, name, description, price, stock_quantity, created_at FROM products ORDER BY id DESC");
         $products = $stmt->fetchAll();
-        http_response_code(200);
-        echo json_encode($products);
-        $log->info("Listed all products", ['count' => count($products)]);
 
-    } elseif (preg_match('/\/products\/(\d+)/', $pathInfo, $matches) && $method === 'GET') {
+        foreach ($products as $index => $product) {
+        $log->debug("Product data before json_encode (index {$index})", [
+            'name' => $product['name'], // Яке тут значення?
+            'description' => $product['description'] // І тут?
+        ]);
+         // Перевірка, чи рядок є валідним UTF-8
+        if (isset($product['name']) && !mb_check_encoding($product['name'], 'UTF-8')) {
+            $log->error("Product name is NOT valid UTF-8 before encode", ['name' => $product['name']]);
+        }
+        if (isset($product['description']) && !mb_check_encoding($product['description'], 'UTF-8')) {
+            $log->error("Product description is NOT valid UTF-8 before encode", ['description' => $product['description']]);
+        }
+    }
+
+    http_response_code(200);
+    echo json_encode($products, JSON_UNESCAPED_UNICODE | JSON_PRETTY_PRINT); // Додав PRETTY_PRINT для легшого читання
+    $log->info("Listed all products", ['count' => count($products)]);
+    exit;
+    /*
+        http_response_code(200);
+        echo json_encode($products, JSON_UNESCAPED_UNICODE);
+        $log->info("Listed all products", ['count' => count($products)]);
+    */
+    } elseif (preg_match('/\/products\/(\d+)/', $path, $matches) && $method === 'GET') {
         // Отримати продукт за ID (доступно для всіх)
         $productId = (int)$matches[1];
         $stmt = $pdo->prepare("SELECT id, name, description, price, stock_quantity, created_at FROM products WHERE id = ?");
@@ -93,11 +119,12 @@ try {
 
         if ($product) {
             http_response_code(200);
-            echo json_encode($product);
+            echo json_encode($product, JSON_UNESCAPED_UNICODE);
+
             $log->info("Fetched product by ID", ['productId' => $productId]);
         } else {
             http_response_code(404);
-            echo json_encode(['error' => 'Product not found']);
+            echo json_encode(['error' => 'Product not found'], JSON_UNESCAPED_UNICODE);
             $log->warning("Product not found by ID", ['productId' => $productId]);
         }
 

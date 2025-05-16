@@ -1,0 +1,115 @@
+[2025-05-16T07:15:56.093949+00:00] ProductService.INFO: Request received {"method":"GET","path":"/","role":"guest"} 
+[2025-05-16T07:15:56.094506+00:00] ProductService.NOTICE: Endpoint not found {"method":"GET","path":"/"} 
+[2025-05-16T07:19:49.093482+00:00] ProductService.INFO: Request received {"method":"GET","path":null,"role":"guest"} 
+[2025-05-16T07:19:49.093919+00:00] ProductService.ERROR: An unexpected error occurred {"exception":"preg_match(): Argument #2 ($subject) must be of type string, null given","trace":"#0 /var/www/app/public/index.php(92): preg_match('/\\\\/products\\\\/(\\\\...', NULL, NULL)
+#1 {main}"} 
+[2025-05-16T07:20:52.101435+00:00] ProductService.INFO: Request received {"method":"GET","path":"/products","role":"guest"} 
+[2025-05-16T07:20:52.144265+00:00] ProductService.INFO: Listed all products {"count":2} 
+[2025-05-16T07:30:24.000684+00:00] ProductService.INFO: Request received {"method":"GET","path":"/products","role":"guest"} 
+[2025-05-16T07:30:24.002088+00:00] ProductService.INFO: Listed all products {"count":2} 
+[2025-05-16T07:31:36.856265+00:00] ProductService.INFO: Request received {"method":"GET","path":"/products","role":"guest"} 
+[2025-05-16T07:31:36.857372+00:00] ProductService.INFO: Listed all products {"count":2} 
+[2025-05-16T07:34:22.052554+00:00] ProductService.INFO: Request received {"method":"GET","path":"/products","role":"guest"} 
+[2025-05-16T07:34:22.053987+00:00] ProductService.INFO: Listed all products {"count":2} 
+[2025-05-16T08:08:41.268858+00:00] ProductService.INFO: Request received {"method":"GET","path":"/products","role":"guest"} 
+[2025-05-16T08:08:41.270167+00:00] ProductService.INFO: Listed all products {"count":2} 
+[2025-05-16T08:12:18.210667+00:00] ProductService.INFO: Request received {"method":"GET","path":"/products","role":"guest"} 
+[2025-05-16T08:12:18.211968+00:00] ProductService.INFO: Listed all products {"count":2} 
+[2025-05-16T08:12:19.283930+00:00] ProductService.INFO: Request received {"method":"GET","path":"/products","role":"guest"} 
+[2025-05-16T08:12:19.285177+00:00] ProductService.INFO: Listed all products {"count":2} 
+[2025-05-16T08:12:20.021014+00:00] ProductService.INFO: Request received {"method":"GET","path":"/products","role":"guest"} 
+[2025-05-16T08:12:20.022216+00:00] ProductService.INFO: Listed all products {"count":2} 
+[2025-05-16T08:14:19.531637+00:00] ProductService.INFO: Request received {"method":"GET","path":"/products","role":"guest"} 
+[2025-05-16T08:14:19.532992+00:00] ProductService.INFO: Listed all products {"count":2} 
+[2025-05-16T08:14:23.220676+00:00] ProductService.INFO: Request received {"method":"GET","path":"/products","role":"guest"} 
+[2025-05-16T08:14:23.221845+00:00] ProductService.INFO: Listed all products {"count":2} 
+[2025-05-16T08:16:06.409484+00:00] ProductService.INFO: Request received {"method":"GET","path":"/products","role":"guest"} 
+[2025-05-16T08:16:06.410807+00:00] ProductService.INFO: Listed all products {"count":2} 
+[2025-05-16T08:16:19.660991+00:00] ProductService.INFO: Request received {"method":"GET","path":"/products","role":"guest"} 
+[2025-05-16T08:16:19.662157+00:00] ProductService.INFO: Listed all products {"count":2} 
+[2025-05-16T08:16:20.526477+00:00] ProductService.INFO: Request received {"method":"GET","path":"/products","role":"guest"} 
+[2025-05-16T08:16:20.528248+00:00] ProductService.INFO: Listed all products {"count":2} 
+[2025-05-16T08:16:21.359296+00:00] ProductService.INFO: Request received {"method":"GET","path":"/products","role":"guest"} 
+[2025-05-16T08:16:21.360254+00:00] ProductService.INFO: Listed all products {"count":2} 
+[2025-05-16T08:16:30.858605+00:00] ProductService.INFO: Request received {"method":"GET","path":"/products","role":"guest"} 
+[2025-05-16T08:16:30.859567+00:00] ProductService.INFO: Listed all products {"count":2} 
+[2025-05-16T08:16:41.679101+00:00] ProductService.INFO: Request received {"method":"GET","path":"/products","role":"guest"} 
+[2025-05-16T08:16:41.680219+00:00] ProductService.INFO: Listed all products {"count":2} 
+[2025-05-16T08:16:42.301766+00:00] ProductService.INFO: Request received {"method":"GET","path":"/products","role":"guest"} 
+[2025-05-16T08:16:42.302685+00:00] ProductService.INFO: Listed all products {"count":2} 
+[2025-05-16T08:16:42.714407+00:00] ProductService.INFO: Request received {"method":"GET","path":"/products","role":"guest"} 
+[2025-05-16T08:16:42.715752+00:00] ProductService.INFO: Listed all products {"count":2} 
+[2025-05-16T08:16:43.089706+00:00] ProductService.INFO: Request received {"method":"GET","path":"/products","role":"guest"} 
+[2025-05-16T08:16:43.091029+00:00] ProductService.INFO: Listed all products {"count":2} 
+[2025-05-16T08:16:43.517166+00:00] ProductService.INFO: Request received {"method":"GET","path":"/products","role":"guest"} 
+[2025-05-16T08:16:43.518510+00:00] ProductService.INFO: Listed all products {"count":2} 
+[2025-05-16T08:16:44.028778+00:00] ProductService.INFO: Request received {"method":"GET","path":"/products","role":"guest"} 
+[2025-05-16T08:16:44.030446+00:00] ProductService.INFO: Listed all products {"count":2} 
+[2025-05-16T08:16:44.457022+00:00] ProductService.INFO: Request received {"method":"GET","path":"/products","role":"guest"} 
+[2025-05-16T08:16:44.458197+00:00] ProductService.INFO: Listed all products {"count":2} 
+[2025-05-16T08:16:44.655618+00:00] ProductService.INFO: Request received {"method":"GET","path":"/products","role":"guest"} 
+[2025-05-16T08:16:44.656729+00:00] ProductService.INFO: Listed all products {"count":2} 
+[2025-05-16T08:16:45.065329+00:00] ProductService.INFO: Request received {"method":"GET","path":"/products","role":"guest"} 
+[2025-05-16T08:16:45.066545+00:00] ProductService.INFO: Listed all products {"count":2} 
+[2025-05-16T08:16:45.248923+00:00] ProductService.INFO: Request received {"method":"GET","path":"/products","role":"guest"} 
+[2025-05-16T08:16:45.250051+00:00] ProductService.INFO: Listed all products {"count":2} 
+[2025-05-16T08:16:45.407691+00:00] ProductService.INFO: Request received {"method":"GET","path":"/products","role":"guest"} 
+[2025-05-16T08:16:45.408677+00:00] ProductService.INFO: Listed all products {"count":2} 
+[2025-05-16T08:16:45.792527+00:00] ProductService.INFO: Request received {"method":"GET","path":"/products","role":"guest"} 
+[2025-05-16T08:16:45.793598+00:00] ProductService.INFO: Listed all products {"count":2} 
+[2025-05-16T08:16:45.926962+00:00] ProductService.INFO: Request received {"method":"GET","path":"/products","role":"guest"} 
+[2025-05-16T08:16:45.928296+00:00] ProductService.INFO: Listed all products {"count":2} 
+[2025-05-16T08:16:46.242469+00:00] ProductService.INFO: Request received {"method":"GET","path":"/products","role":"guest"} 
+[2025-05-16T08:16:46.243554+00:00] ProductService.INFO: Listed all products {"count":2} 
+[2025-05-16T08:17:43.426144+00:00] ProductService.INFO: Request received {"method":"GET","path":"/products","role":"guest"} 
+[2025-05-16T08:17:43.427307+00:00] ProductService.INFO: Listed all products {"count":2} 
+[2025-05-16T08:24:45.761738+00:00] ProductService.INFO: Request received {"method":"GET","path":"/products","role":"guest"} 
+[2025-05-16T08:24:45.762638+00:00] ProductService.INFO: Listed all products {"count":2} 
+[2025-05-16T08:27:07.201841+00:00] ProductService.INFO: Request received {"method":"GET","path":"/products","role":"guest"} 
+[2025-05-16T08:27:07.202678+00:00] ProductService.INFO: Listed all products {"count":2} 
+[2025-05-16T08:27:43.086717+00:00] ProductService.INFO: Request received {"method":"GET","path":"/products","role":"guest"} 
+[2025-05-16T08:27:43.087720+00:00] ProductService.INFO: Listed all products {"count":2} 
+[2025-05-16T08:30:29.446803+00:00] ProductService.INFO: Request received {"method":"GET","path":"/products","role":"guest"} 
+[2025-05-16T08:30:29.447586+00:00] ProductService.INFO: Listed all products {"count":2} 
+[2025-05-16T08:38:11.709712+00:00] ProductService.INFO: Request received {"method":"GET","path":"/products","role":"guest"} 
+[2025-05-16T08:38:11.710872+00:00] ProductService.INFO: Listed all products {"count":2} 
+[2025-05-16T08:53:14.344394+00:00] ProductService.INFO: Request received {"method":"GET","path":"/products","role":"guest"} 
+[2025-05-16T08:53:14.385764+00:00] ProductService.DEBUG: Product data before json_encode (index 0) {"name":"Ð¡Ð¼Ð°Ñ€Ñ‚Ñ„Ð¾Ð½ Galaxy S25","description":"ÐžÑÑ‚Ð°Ð½Ð½Ñ” Ð¿Ð¾ÐºÐ¾Ð»Ñ–Ð½Ð½Ñ ÑÐ¼Ð°Ñ€Ñ‚Ñ„Ð¾Ð½Ñ–Ð² Samsung"} 
+[2025-05-16T08:53:14.386080+00:00] ProductService.DEBUG: Product data before json_encode (index 1) {"name":"ÐšÐ½Ð¸Ð³Ð° \"ÐšÐ¾Ð±Ð·Ð°Ñ€\"","description":"Ð—Ð±Ñ–Ñ€ÐºÐ° Ð¿Ð¾ÐµÑ‚Ð¸Ñ‡Ð½Ð¸Ñ… Ñ‚Ð²Ð¾Ñ€Ñ–Ð² Ð¢Ð°Ñ€Ð°ÑÐ° Ð¨ÐµÐ²Ñ‡ÐµÐ½ÐºÐ°"} 
+[2025-05-16T08:53:14.386292+00:00] ProductService.INFO: Listed all products {"count":2} 
+[2025-05-16T08:56:58.613764+00:00] ProductService.INFO: Request received {"method":"GET","path":"/products","role":"guest"} 
+[2025-05-16T08:56:58.616160+00:00] ProductService.DEBUG: Product data before json_encode (index 0) {"name":"Ð¡Ð¼Ð°Ñ€Ñ‚Ñ„Ð¾Ð½ Galaxy S25","description":"ÐžÑÑ‚Ð°Ð½Ð½Ñ” Ð¿Ð¾ÐºÐ¾Ð»Ñ–Ð½Ð½Ñ ÑÐ¼Ð°Ñ€Ñ‚Ñ„Ð¾Ð½Ñ–Ð² Samsung"} 
+[2025-05-16T08:56:58.616358+00:00] ProductService.DEBUG: Product data before json_encode (index 1) {"name":"ÐšÐ½Ð¸Ð³Ð° \"ÐšÐ¾Ð±Ð·Ð°Ñ€\"","description":"Ð—Ð±Ñ–Ñ€ÐºÐ° Ð¿Ð¾ÐµÑ‚Ð¸Ñ‡Ð½Ð¸Ñ… Ñ‚Ð²Ð¾Ñ€Ñ–Ð² Ð¢Ð°Ñ€Ð°ÑÐ° Ð¨ÐµÐ²Ñ‡ÐµÐ½ÐºÐ°"} 
+[2025-05-16T08:56:58.616509+00:00] ProductService.INFO: Listed all products {"count":2} 
+[2025-05-16T08:57:00.139639+00:00] ProductService.INFO: Request received {"method":"GET","path":"/products","role":"guest"} 
+[2025-05-16T08:57:00.141167+00:00] ProductService.DEBUG: Product data before json_encode (index 0) {"name":"Ð¡Ð¼Ð°Ñ€Ñ‚Ñ„Ð¾Ð½ Galaxy S25","description":"ÐžÑÑ‚Ð°Ð½Ð½Ñ” Ð¿Ð¾ÐºÐ¾Ð»Ñ–Ð½Ð½Ñ ÑÐ¼Ð°Ñ€Ñ‚Ñ„Ð¾Ð½Ñ–Ð² Samsung"} 
+[2025-05-16T08:57:00.141381+00:00] ProductService.DEBUG: Product data before json_encode (index 1) {"name":"ÐšÐ½Ð¸Ð³Ð° \"ÐšÐ¾Ð±Ð·Ð°Ñ€\"","description":"Ð—Ð±Ñ–Ñ€ÐºÐ° Ð¿Ð¾ÐµÑ‚Ð¸Ñ‡Ð½Ð¸Ñ… Ñ‚Ð²Ð¾Ñ€Ñ–Ð² Ð¢Ð°Ñ€Ð°ÑÐ° Ð¨ÐµÐ²Ñ‡ÐµÐ½ÐºÐ°"} 
+[2025-05-16T08:57:00.141539+00:00] ProductService.INFO: Listed all products {"count":2} 
+[2025-05-16T08:57:01.119188+00:00] ProductService.INFO: Request received {"method":"GET","path":"/products","role":"guest"} 
+[2025-05-16T08:57:01.121839+00:00] ProductService.DEBUG: Product data before json_encode (index 0) {"name":"Ð¡Ð¼Ð°Ñ€Ñ‚Ñ„Ð¾Ð½ Galaxy S25","description":"ÐžÑÑ‚Ð°Ð½Ð½Ñ” Ð¿Ð¾ÐºÐ¾Ð»Ñ–Ð½Ð½Ñ ÑÐ¼Ð°Ñ€Ñ‚Ñ„Ð¾Ð½Ñ–Ð² Samsung"} 
+[2025-05-16T08:57:01.122034+00:00] ProductService.DEBUG: Product data before json_encode (index 1) {"name":"ÐšÐ½Ð¸Ð³Ð° \"ÐšÐ¾Ð±Ð·Ð°Ñ€\"","description":"Ð—Ð±Ñ–Ñ€ÐºÐ° Ð¿Ð¾ÐµÑ‚Ð¸Ñ‡Ð½Ð¸Ñ… Ñ‚Ð²Ð¾Ñ€Ñ–Ð² Ð¢Ð°Ñ€Ð°ÑÐ° Ð¨ÐµÐ²Ñ‡ÐµÐ½ÐºÐ°"} 
+[2025-05-16T08:57:01.122184+00:00] ProductService.INFO: Listed all products {"count":2} 
+[2025-05-16T08:57:02.154546+00:00] ProductService.INFO: Request received {"method":"GET","path":"/products","role":"guest"} 
+[2025-05-16T08:57:02.160662+00:00] ProductService.DEBUG: Product data before json_encode (index 0) {"name":"Ð¡Ð¼Ð°Ñ€Ñ‚Ñ„Ð¾Ð½ Galaxy S25","description":"ÐžÑÑ‚Ð°Ð½Ð½Ñ” Ð¿Ð¾ÐºÐ¾Ð»Ñ–Ð½Ð½Ñ ÑÐ¼Ð°Ñ€Ñ‚Ñ„Ð¾Ð½Ñ–Ð² Samsung"} 
+[2025-05-16T08:57:02.160877+00:00] ProductService.DEBUG: Product data before json_encode (index 1) {"name":"ÐšÐ½Ð¸Ð³Ð° \"ÐšÐ¾Ð±Ð·Ð°Ñ€\"","description":"Ð—Ð±Ñ–Ñ€ÐºÐ° Ð¿Ð¾ÐµÑ‚Ð¸Ñ‡Ð½Ð¸Ñ… Ñ‚Ð²Ð¾Ñ€Ñ–Ð² Ð¢Ð°Ñ€Ð°ÑÐ° Ð¨ÐµÐ²Ñ‡ÐµÐ½ÐºÐ°"} 
+[2025-05-16T08:57:02.161055+00:00] ProductService.INFO: Listed all products {"count":2} 
+[2025-05-16T09:00:29.162881+00:00] ProductService.INFO: Request received {"method":"GET","path":"/products","role":"guest"} 
+[2025-05-16T09:00:29.201740+00:00] ProductService.DEBUG: Product data before json_encode (index 0) {"name":"Ð¡Ð¼Ð°Ñ€Ñ‚Ñ„Ð¾Ð½ Galaxy S25","description":"ÐžÑÑ‚Ð°Ð½Ð½Ñ” Ð¿Ð¾ÐºÐ¾Ð»Ñ–Ð½Ð½Ñ ÑÐ¼Ð°Ñ€Ñ‚Ñ„Ð¾Ð½Ñ–Ð² Samsung"} 
+[2025-05-16T09:00:29.201914+00:00] ProductService.DEBUG: Product data before json_encode (index 1) {"name":"ÐšÐ½Ð¸Ð³Ð° \"ÐšÐ¾Ð±Ð·Ð°Ñ€\"","description":"Ð—Ð±Ñ–Ñ€ÐºÐ° Ð¿Ð¾ÐµÑ‚Ð¸Ñ‡Ð½Ð¸Ñ… Ñ‚Ð²Ð¾Ñ€Ñ–Ð² Ð¢Ð°Ñ€Ð°ÑÐ° Ð¨ÐµÐ²Ñ‡ÐµÐ½ÐºÐ°"} 
+[2025-05-16T09:00:29.202083+00:00] ProductService.INFO: Listed all products {"count":2} 
+[2025-05-16T09:00:30.059138+00:00] ProductService.INFO: Request received {"method":"GET","path":"/products","role":"guest"} 
+[2025-05-16T09:00:30.060657+00:00] ProductService.DEBUG: Product data before json_encode (index 0) {"name":"Ð¡Ð¼Ð°Ñ€Ñ‚Ñ„Ð¾Ð½ Galaxy S25","description":"ÐžÑÑ‚Ð°Ð½Ð½Ñ” Ð¿Ð¾ÐºÐ¾Ð»Ñ–Ð½Ð½Ñ ÑÐ¼Ð°Ñ€Ñ‚Ñ„Ð¾Ð½Ñ–Ð² Samsung"} 
+[2025-05-16T09:00:30.064295+00:00] ProductService.DEBUG: Product data before json_encode (index 1) {"name":"ÐšÐ½Ð¸Ð³Ð° \"ÐšÐ¾Ð±Ð·Ð°Ñ€\"","description":"Ð—Ð±Ñ–Ñ€ÐºÐ° Ð¿Ð¾ÐµÑ‚Ð¸Ñ‡Ð½Ð¸Ñ… Ñ‚Ð²Ð¾Ñ€Ñ–Ð² Ð¢Ð°Ñ€Ð°ÑÐ° Ð¨ÐµÐ²Ñ‡ÐµÐ½ÐºÐ°"} 
+[2025-05-16T09:00:30.064484+00:00] ProductService.INFO: Listed all products {"count":2} 
+[2025-05-16T09:00:31.590084+00:00] ProductService.INFO: Request received {"method":"GET","path":"/products","role":"guest"} 
+[2025-05-16T09:00:31.594291+00:00] ProductService.DEBUG: Product data before json_encode (index 0) {"name":"Ð¡Ð¼Ð°Ñ€Ñ‚Ñ„Ð¾Ð½ Galaxy S25","description":"ÐžÑÑ‚Ð°Ð½Ð½Ñ” Ð¿Ð¾ÐºÐ¾Ð»Ñ–Ð½Ð½Ñ ÑÐ¼Ð°Ñ€Ñ‚Ñ„Ð¾Ð½Ñ–Ð² Samsung"} 
+[2025-05-16T09:00:31.594476+00:00] ProductService.DEBUG: Product data before json_encode (index 1) {"name":"ÐšÐ½Ð¸Ð³Ð° \"ÐšÐ¾Ð±Ð·Ð°Ñ€\"","description":"Ð—Ð±Ñ–Ñ€ÐºÐ° Ð¿Ð¾ÐµÑ‚Ð¸Ñ‡Ð½Ð¸Ñ… Ñ‚Ð²Ð¾Ñ€Ñ–Ð² Ð¢Ð°Ñ€Ð°ÑÐ° Ð¨ÐµÐ²Ñ‡ÐµÐ½ÐºÐ°"} 
+[2025-05-16T09:00:31.594597+00:00] ProductService.INFO: Listed all products {"count":2} 
+[2025-05-16T09:00:33.512782+00:00] ProductService.INFO: Request received {"method":"GET","path":"/products","role":"guest"} 
+[2025-05-16T09:00:33.514277+00:00] ProductService.DEBUG: Product data before json_encode (index 0) {"name":"Ð¡Ð¼Ð°Ñ€Ñ‚Ñ„Ð¾Ð½ Galaxy S25","description":"ÐžÑÑ‚Ð°Ð½Ð½Ñ” Ð¿Ð¾ÐºÐ¾Ð»Ñ–Ð½Ð½Ñ ÑÐ¼Ð°Ñ€Ñ‚Ñ„Ð¾Ð½Ñ–Ð² Samsung"} 
+[2025-05-16T09:00:33.514465+00:00] ProductService.DEBUG: Product data before json_encode (index 1) {"name":"ÐšÐ½Ð¸Ð³Ð° \"ÐšÐ¾Ð±Ð·Ð°Ñ€\"","description":"Ð—Ð±Ñ–Ñ€ÐºÐ° Ð¿Ð¾ÐµÑ‚Ð¸Ñ‡Ð½Ð¸Ñ… Ñ‚Ð²Ð¾Ñ€Ñ–Ð² Ð¢Ð°Ñ€Ð°ÑÐ° Ð¨ÐµÐ²Ñ‡ÐµÐ½ÐºÐ°"} 
+[2025-05-16T09:00:33.514597+00:00] ProductService.INFO: Listed all products {"count":2} 
+[2025-05-16T09:03:01.876489+00:00] ProductService.INFO: Request received {"method":"GET","path":"/products","role":"guest"} 
+[2025-05-16T09:03:01.878316+00:00] ProductService.DEBUG: Product data before json_encode (index 0) {"name":"Ð¡Ð¼Ð°Ñ€Ñ‚Ñ„Ð¾Ð½ Galaxy S25","description":"ÐžÑÑ‚Ð°Ð½Ð½Ñ” Ð¿Ð¾ÐºÐ¾Ð»Ñ–Ð½Ð½Ñ ÑÐ¼Ð°Ñ€Ñ‚Ñ„Ð¾Ð½Ñ–Ð² Samsung"} 
+[2025-05-16T09:03:01.878627+00:00] ProductService.DEBUG: Product data before json_encode (index 1) {"name":"ÐšÐ½Ð¸Ð³Ð° \"ÐšÐ¾Ð±Ð·Ð°Ñ€\"","description":"Ð—Ð±Ñ–Ñ€ÐºÐ° Ð¿Ð¾ÐµÑ‚Ð¸Ñ‡Ð½Ð¸Ñ… Ñ‚Ð²Ð¾Ñ€Ñ–Ð² Ð¢Ð°Ñ€Ð°ÑÐ° Ð¨ÐµÐ²Ñ‡ÐµÐ½ÐºÐ°"} 
+[2025-05-16T09:03:01.878812+00:00] ProductService.INFO: Listed all products {"count":2} 

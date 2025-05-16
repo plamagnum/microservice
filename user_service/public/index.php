@@ -36,7 +36,7 @@ try {
 $dbHost = getenv('DB_HOST') ?: 'mysql';
 $dbName = getenv('DB_DATABASE') ?: 'microservices_example';
 $dbUser = getenv('DB_USER') ?: 'root'; // Краще використовувати окремого користувача
-$dbPass = getenv('DB_PASSWORD') ?: 'password'; // Змініть на ваш пароль з docker-compose
+$dbPass = getenv('DB_PASSWORD') ?: 'rootpassword'; // Змініть на ваш пароль з docker-compose
 
 try {
     $pdo = new PDO("mysql:host={$dbHost};dbname={$dbName}", $dbUser, $dbPass);

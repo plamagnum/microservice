@@ -2,6 +2,9 @@
 // api_gateway/public/index.php
 require_once __DIR__ . '/../vendor/autoload.php';
 
+header("Content-Type: application/json; charset=UTF-8");
+header("Access-Control-Allow-Origin: *"); 
+
 use Monolog\Logger;
 use Monolog\Handler\StreamHandler;
 
@@ -115,6 +118,6 @@ if ($curlError) {
 
 http_response_code($httpCode);
 // Видалення заголовків Transfer-Encoding, які можуть спричинити проблеми
-//header_remove("Transfer-Encoding");
+header_remove("Transfer-Encoding");
 echo $response;
 $log->info("Response from {$targetUrl} [{$httpCode}]");
